@@ -1,9 +1,9 @@
-import loading from "../../static/loading.gif"
+import loadingGif from "../../static/loading.gif"
 
 const Loading = () => {
   return (
     <div className="text-center">
-      <img src={loading} alt="Loading..." />
+      <img src={loadingGif} alt="Loading..." />
     </div>
   );
 };

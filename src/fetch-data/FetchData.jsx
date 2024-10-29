@@ -1,12 +1,16 @@
 export const FetchData = (setState) => {
-  const url = "https://imdb-top-100-movies.p.rapidapi.com/";
-  const options = {
-    method: "GET",
-    headers: {
-      "x-rapidapi-key": "943573a79dmshf7134885a9ca092p15bfbcjsnb59e1140d7a1",
-      "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
-    },
-  };
+  // setState({
+  //   loading: true
+  // })
+
+  // const url = "https://imdb-top-100-movies.p.rapidapi.com/";
+  // const options = {
+  //   method: "GET",
+  //   headers: {
+  //     "x-rapidapi-key": "943573a79dmshf7134885a9ca092p15bfbcjsnb59e1140d7a1",
+  //     "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
+  //   },
+  // };
 
   // fetch(url, options)
   //   .then((response) => {
@@ -92,9 +96,84 @@ export const FetchData = (setState) => {
       "year": 2002,
       "imdbid": "tt0253474",
       "imdb_link": "https://www.imdb.com/title/tt0253474"
-    }
+    },
+    {
+      "rank": 32,
+      "title": "Oppenheimer",
+      "description": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "big_image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "genre": [
+        "Biography",
+        "Drama",
+        "History"
+      ],
+      "thumbnail": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_UY67_CR0,0,45,67_AL_.jpg",
+      "rating": "8.6",
+      "id": "top321",
+      "year": 2023,
+      "imdbid": "tt15398776",
+      "imdb_link": "https://www.imdb.com/title/tt15398776"
+    },
+    {
+      "rank": 32,
+      "title": "Oppenheimer",
+      "description": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "big_image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "genre": [
+        "Biography",
+        "Drama",
+        "History"
+      ],
+      "thumbnail": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_UY67_CR0,0,45,67_AL_.jpg",
+      "rating": "8.6",
+      "id": "top312",
+      "year": 2023,
+      "imdbid": "tt15398776",
+      "imdb_link": "https://www.imdb.com/title/tt15398776"
+    },
+    {
+      "rank": 32,
+      "title": "Oppenheimer",
+      "description": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "big_image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "genre": [
+        "Biography",
+        "Drama",
+        "History"
+      ],
+      "thumbnail": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_UY67_CR0,0,45,67_AL_.jpg",
+      "rating": "8.6",
+      "id": "top2",
+      "year": 2023,
+      "imdbid": "tt15398776",
+      "imdb_link": "https://www.imdb.com/title/tt15398776"
+    },
+    {
+      "rank": 32,
+      "title": "Oppenheimer",
+      "description": "The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "big_image": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "genre": [
+        "Biography",
+        "Drama",
+        "History"
+      ],
+      "thumbnail": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_UY67_CR0,0,45,67_AL_.jpg",
+      "rating": "8.6",
+      "id": "top3",
+      "year": 2023,
+      "imdbid": "tt15398776",
+      "imdb_link": "https://www.imdb.com/title/tt15398776"
+    },
   ]
 
-  setState(temp)
+  setState({
+    movieData: temp
+  })
+  console.log("data set->"+temp)
 };
 
