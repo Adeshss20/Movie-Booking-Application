@@ -1,16 +1,14 @@
-const MovieList = [];
+const data = {
+  MovieList: [],
+};
 
-const MovieReducer = (state = MovieList, action) => {
-    console.log("");
-    
-    console.log(`inside redux -> ${action.payload}`);
-    
+const MovieReducer = (state = data, action) => {
   switch (action.type) {
     case "SET_DATA":
-      return [...action.payload];
+      return { MovieList: [...action.payload] };
 
     case "CLEAR":
-      return [];
+      return { MovieList: [],};
 
     default:
       return state;

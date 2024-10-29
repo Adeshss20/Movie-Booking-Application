@@ -6,6 +6,7 @@ import PageNotFound from "./components/page-not-found/PageNotFound";
 import MovieReducer from "./reducer/MovieReducer";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import BookingsPage from "./components/bookings-page/BookingsPage";
 
 function App() {
   const movieStore = createStore(MovieReducer);
@@ -15,12 +16,14 @@ function App() {
       <Provider store={movieStore}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<MovieListingPage />}></Route>
-            <Route path="movie/:id" element={<MovieDetailsPage />}></Route>
+            <Route path="/movies" element={<MovieListingPage />}></Route>
+            <Route path="/movies/:id" element={<MovieDetailsPage />}></Route>
+            <Route path="/bookings" element={<BookingsPage />}></Route>
             <Route path="*" element={<PageNotFound />}></Route>
           </Routes>
         </BrowserRouter>
       </Provider>
+      
     </div>
   );
 }
