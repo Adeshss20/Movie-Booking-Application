@@ -19,10 +19,6 @@ const BookingsPage = () => {
     setBookingList(bookingData);
   }, []);
 
-  const handleDeleteBooking = () => {
-
-  }
-
   return (
     <>
       <div className="container">
@@ -50,6 +46,7 @@ const BookingsPage = () => {
                     <div className="col-md-2 my-1">{booking.movieTitle}</div>
                     <div className="col-md-1 my-1">{booking.noOfSeat}</div>
                     <div className="col-md-2 my-1">{booking.timing}</div>
+                    <div className="col-md-2 my-1">{booking.seat.map(s => s+" ")}</div>
                     <div className="col-md-2 my-1">
                       <button
                         type="button"

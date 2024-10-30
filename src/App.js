@@ -23,6 +23,7 @@ function App() {
         <BrowserRouter>
         <NavBar/>
           <Routes>
+            <Route path="/" element={<h1>Welocome...!!</h1>}></Route>
             <Route path="/movies" element={<MovieListingPage />}></Route>
             <Route path="/movies/:id" element={<MovieDetailsPage />}></Route>
             <Route path="/bookings" element={<BookingsPage />}></Route>
