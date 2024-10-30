@@ -1,23 +1,35 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const BookingModal = (props) => {
   const [formData, setFormData] = useState({
+    id: "",
     fullname: "",
     mobile: "",
     email: "",
     timing: "",
     noOfSeat: 0,
+    movieTitle: "",
+    movieId: "",
   });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setFormData({
-        fullname: "",
-        mobile: "",
-        email: "",
-        timing: "",
-        noOfSeat: 0,
-      });
-  }
+      id: "",
+      fullname: "",
+      mobile: "",
+      email: "",
+      timing: "",
+      noOfSeat: 0,
+      movieTitle: "",
+      movieId: "",
+    });
+  };
 
   const handleChange = (event) => {
     setFormData((prevState) => ({
@@ -30,8 +42,22 @@ const BookingModal = (props) => {
   };
 
   const handleSubmit = (event) => {
-    console.log(formData);
+    let data = formData;
+    const id = uuidv4();
+    data = {
+      ...formData,
+      movieTitle: props.movieTitle,
+      movieId: props.movieId,
+      id: id,
+    };
+    console.log(data);
+    
+    dispatch({
+      type: "UPDATE",
+      payload: data,
+    });
     event.preventDefault();
+    navigate("/movies")
   };
 
   return (
@@ -120,6 +146,7 @@ const BookingModal = (props) => {
                 <input
                   type="submit"
                   value="Select Seat"
+                  data-bs-dismiss="modal"
                   className="btn btn-outline-success my-2 mx-2"
                 />
               </div>
@@ -127,8 +154,6 @@ const BookingModal = (props) => {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 };

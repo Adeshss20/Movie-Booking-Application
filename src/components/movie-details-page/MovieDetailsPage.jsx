@@ -7,10 +7,12 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState({});
   const navigate = useNavigate();
   const { id } = useParams();
-  const movieList = useSelector((state) => state.MovieList);
+  const movieList = useSelector((state) => state.movies);
 
   useEffect(() => {
-    const data = movieList.filter((movie) => movie.id === id);
+    console.log(movieList);
+
+    const data = movieList["MovieList"].filter((movie) => movie.id === id);
     setMovie(data[0]);
   }, []);
 
@@ -41,7 +43,7 @@ const MovieDetailsPage = () => {
             <b>Rating:</b> {movie.rating}
           </li>
           <li className="list-group-item">
-            <b>Timings:</b>
+            <b>Timings:</b> 
           </li>
         </ul>
       </div>
@@ -51,7 +53,7 @@ const MovieDetailsPage = () => {
           className="btn btn-outline-dark my-3 "
           type="button"
           style={{ width: "100%" }}
-          data-bs-toggle="modal" 
+          data-bs-toggle="modal"
           data-bs-target="#TicketBookingModal"
         >
           Book Ticket
@@ -64,7 +66,7 @@ const MovieDetailsPage = () => {
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <BookingModal movieTitle={movie.title}/>
+          <BookingModal movieTitle={movie.title} movieId={movie.id} />
         </div>
       </div>
 

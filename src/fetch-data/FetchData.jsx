@@ -44,16 +44,16 @@ export const FetchData = (setState) => {
       imdb_link: "https://www.imdb.com/title/tt15398776",
       timing: [
         {
-          start_time: "15:45",
-          end_time: "17:51",
+          start_time: "09:30",
+          end_time: "12:40",
         },
         {
-          start_time: "16:55",
-          end_time: "19:01",
+          start_time: "13:15",
+          end_time: "15:00",
         },
         {
-          start_time: "18:30",
-          end_time: "20:36",
+          start_time: "12:30",
+          end_time: "15:30",
         },
         {
           start_time: "20:00",
@@ -351,7 +351,6 @@ export const FetchData = (setState) => {
         },
       ],
     },
-
   ];
 
   setState({

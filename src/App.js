@@ -4,17 +4,24 @@ import MovieListingPage from "./components/movie-listing-page/MovieListingPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageNotFound from "./components/page-not-found/PageNotFound";
 import MovieReducer from "./reducer/MovieReducer";
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 import BookingsPage from "./components/bookings-page/BookingsPage";
+import BookingsHistoryReducer from "./reducer/BookingsHistoryReducer";
+import NavBar from "./components/navbar/NavBar";
 
 function App() {
-  const movieStore = createStore(MovieReducer);
+  const rootReducer = combineReducers({
+    movies: MovieReducer,
+    bookings: BookingsHistoryReducer,
+  });
+  const store = createStore(rootReducer);
 
   return (
     <div className="App">
-      <Provider store={movieStore}>
+      <Provider store={store}>
         <BrowserRouter>
+        <NavBar/>
           <Routes>
             <Route path="/movies" element={<MovieListingPage />}></Route>
             <Route path="/movies/:id" element={<MovieDetailsPage />}></Route>
@@ -23,7 +30,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </Provider>
-      
     </div>
   );
 }

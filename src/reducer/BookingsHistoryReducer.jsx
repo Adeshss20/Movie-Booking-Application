@@ -1,17 +1,17 @@
-const data = {
-    BookingsHistoryData: [],
-};
-  
-  const BookingsHistoryReducer = (state = data, action) => {
+const BookingsHistoryData= []
 
-    switch (action.type) {
-      case "UPDATE":
-        return { MovieList: [...data.BookingsHistoryData,action.payload] };
+const BookingsHistoryReducer = (state = BookingsHistoryData, action) => {
+  console.log("Inside booking store");
   
-      default:
-        return state;
-    }
-  };
+  console.log(action);
   
-  export default BookingsHistoryReducer;
-  
+  switch (action.type) {
+    case "UPDATE":
+      return [...state, action.payload];
+
+    default:
+      return state;
+  }
+};
+
+export default BookingsHistoryReducer;
