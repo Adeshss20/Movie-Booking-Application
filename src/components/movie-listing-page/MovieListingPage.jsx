@@ -50,7 +50,7 @@ const MovieListingPage = () => {
                     type="button"
                     onClick={() => navigate(`/movies/${movie.id}`)}
                   >
-                    View Details
+                    View Details &raquo;
                   </button>
                 </div>
               </div>
