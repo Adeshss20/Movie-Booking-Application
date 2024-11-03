@@ -130,6 +130,32 @@ export const FetchData = (setState) => {
       year: 1985,
       imdbid: "tt0088763",
       imdb_link: "https://www.imdb.com/title/tt0088763",
+      timing: [
+        {
+          start_time: "15:45",
+          end_time: "17:51",
+        },
+        {
+          start_time: "16:55",
+          end_time: "19:01",
+        },
+        {
+          start_time: "18:30",
+          end_time: "20:36",
+        },
+        {
+          start_time: "20:00",
+          end_time: "22:06",
+        },
+        {
+          start_time: "22:00",
+          end_time: "00:06",
+        },
+        {
+          start_time: "23:35",
+          end_time: "01:41",
+        },
+      ],
     },
     {
       rank: 35,
@@ -352,6 +378,17 @@ export const FetchData = (setState) => {
       ],
     },
   ];
+
+  temp.forEach(movie => {
+    const FinalTiming = movie.timing.reduce((timingList, time) => {
+        timingList.push( `${time.start_time}-${time.end_time}`)
+        return timingList;
+    },[])
+    // console.log(FinalTiming);
+    
+    movie.timing = FinalTiming
+  })
+ 
 
   setState({
     movieData: temp,

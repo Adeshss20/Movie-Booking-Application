@@ -5,11 +5,8 @@ const data = {
 const MovieReducer = (state = data, action) => {
 
   switch (action.type) {
-    case "SET_DATA":
+    case "SET_MOVIES":
       return { MovieList: [...action.payload] };
-
-    case "CLEAR":
-      return { MovieList: [] };
 
     default:
       return state;

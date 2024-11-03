@@ -2,14 +2,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import PropTypes from "prop-types";
 import SeatSelectionLayout from "../seat-layout/SeatSelectionLayout";
 
 const BookingModal = (props) => {
   const [formData, setFormData] = useState({
     id: "",
-    fullname: "",
-    mobile: "",
-    email: "",
     timing: "",
     noOfSeat: 0,
     movieTitle: "",
@@ -23,9 +21,6 @@ const BookingModal = (props) => {
   const handleClose = () => {
     setFormData({
       id: "",
-      fullname: "",
-      mobile: "",
-      email: "",
       timing: "",
       noOfSeat: 0,
       movieTitle: "",
@@ -37,30 +32,10 @@ const BookingModal = (props) => {
   const handleChange = (event) => {
     setFormData((prevState) => ({
       ...prevState,
-      [event.target.name]:
-        event.target.type === "checkbox"
-          ? event.target.checked
-          : event.target.value,
-    }));
-    console.log(typeof(parseInt(formData.noOfSeat,10)));
-    
+      [event.target.name]: event.target.value,
+    })); 
   };
 
-  const validateData = (data) => {
-    if (
-      formData.email.trim() === "" ||
-      formData.fullname.trim() === "" ||
-      formData.noOfSeat <= 0 ||
-      formData.mobile.trim() === "" ||
-      formData.timing.trim() === "Open this select" ||
-      formData.mobile.trim().length!==10 ||
-      formData.seat.length !== formData.noOfSeat
-    ) {
-      return false;
-    }
-
-    return true;
-  };
   const handleSubmit = (event) => {
     let data = formData;
     const id = uuidv4();
@@ -70,15 +45,9 @@ const BookingModal = (props) => {
       movieId: props.movieId,
       id: id,
     };
-    console.log(data);
-    console.log("validate ->" + validateData(formData));
-
-    // if(!validateData(formData)) {
-    //   console.log("Inside validate - no dispatch sent") 
-    // }
     
     dispatch({
-      type: "UPDATE",
+      type: "UPDATE_BOOKING",
       payload: data,
     }); 
     event.preventDefault();
@@ -105,39 +74,6 @@ const BookingModal = (props) => {
             <div>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label className="form-label">Full Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={formData.fullname}
-                    name="fullname"
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label">Mobile</label>
-                  <input
-                    type="tel"
-                    className="form-control"
-                    name="mobile"
-                    value={formData.mobile}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label">Email address</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
                   <label className="form-label">Choose show Timing</label>
                   <select
                     className="form-select"
@@ -148,7 +84,10 @@ const BookingModal = (props) => {
                     required
                   >
                     <option selected>Open this select</option>
-                    <option value="09:30 - 12:40">09:30 - 12:40</option>
+                    {/* {props.timing.map(time => {
+                      return <option value={time}>{time}</option>
+                    })} */}
+                    
                     <option value="13:15 - 15:00">13:15 - 15:00</option>
                     <option value="12:30 - 15:30">12:30 - 15:30</option>
                     <option value="20:00 - 23:15">20:00 - 23:15</option>
@@ -183,10 +122,7 @@ const BookingModal = (props) => {
                     data-bs-dismiss="modal"
                     className="btn btn-outline-success my-2 mx-2"
                     disabled={
-                      formData.email.trim() === "" ||
-                      formData.fullname.trim() === "" ||
                       parseInt(formData.noOfSeat,10) <= 0 ||
-                      formData.mobile.trim() === "" ||
                       formData.timing.trim() === "Open this select" ||
                       formData.seat.length===0 ||
                       formData.seat.length!==parseInt(formData.noOfSeat) 
@@ -200,6 +136,12 @@ const BookingModal = (props) => {
       </div>
     </>
   );
+};
+
+BookingModal.prototype = {
+  movieTitle: PropTypes.string.isRequired,
+  movieId: PropTypes.string.isRequired,
+  timing: PropTypes.array.isRequired,
 };
 
 export default BookingModal;

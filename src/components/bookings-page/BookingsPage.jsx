@@ -42,7 +42,6 @@ const BookingsPage = () => {
                     className="row d-flex justify-content-between"
                     key={booking.id}
                   >
-                    <div className="col-md-2 my-1">{booking.fullname}</div>
                     <div className="col-md-2 my-1">{booking.movieTitle}</div>
                     <div className="col-md-1 my-1">{booking.noOfSeat}</div>
                     <div className="col-md-2 my-1">{booking.timing}</div>

@@ -1,12 +1,12 @@
 const BookingsHistoryData= []
 
 const BookingsHistoryReducer = (state = BookingsHistoryData, action) => {
-  console.log("Inside booking store");
+  // console.log("Inside booking store");
   
-  console.log(action);
+  // console.log(action);
   
   switch (action.type) {
-    case "UPDATE":
+    case "UPDATE_BOOKING":
       return [...state, action.payload];
     
     case "DELETE_BOOKING":

@@ -9,11 +9,13 @@ import { Provider } from "react-redux";
 import BookingsPage from "./components/bookings-page/BookingsPage";
 import BookingsHistoryReducer from "./reducer/BookingsHistoryReducer";
 import NavBar from "./components/navbar/NavBar";
+import SeatAvailabilityReducer from "./reducer/SeatAvailabilityReducer";
 
 function App() {
   const rootReducer = combineReducers({
     movies: MovieReducer,
     bookings: BookingsHistoryReducer,
+    seatAvalability: SeatAvailabilityReducer
   });
   const store = createStore(rootReducer);
 

@@ -10,11 +10,10 @@ const MovieDetailsPage = () => {
   const movieList = useSelector((state) => state.movies);
 
   useEffect(() => {
-    console.log(movieList);
-
     const data = movieList["MovieList"].filter((movie) => movie.id === id);
     setMovie(data[0]);
   }, []);
+
 
   return (
     <div className="container">
@@ -43,7 +42,7 @@ const MovieDetailsPage = () => {
             <b>Rating:</b> {movie.rating}
           </li>
           <li className="list-group-item">
-            <b>Timings:</b> 
+            <b>Timings:</b> {movie["timing"]}
           </li>
         </ul>
       </div>
@@ -66,7 +65,11 @@ const MovieDetailsPage = () => {
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <BookingModal movieTitle={movie.title} movieId={movie.id} />
+          <BookingModal
+            movieTitle={movie.title}
+            movieId={movie.id}
+            timing={movie.timing}
+          />
         </div>
       </div>
 
