@@ -64,6 +64,7 @@ const MovieListingPage = () => {
               className="card col-md-4 shadow p-3 mb-5 bg-white rounded my-2"
               key={movie.id}
               style={{ width: "18.5rem", height: "21rem" }}
+              data-testid={movie.id}
             >
               <img
                 src={movie.image}

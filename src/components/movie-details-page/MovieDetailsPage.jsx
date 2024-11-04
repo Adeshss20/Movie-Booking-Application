@@ -16,7 +16,7 @@ const MovieDetailsPage = () => {
 
 
   return (
-    <div className="container">
+    <div className="container" data-testid={movie.id}>
       <div className="card my-3 centre">
         <img
           src={movie.big_image}
