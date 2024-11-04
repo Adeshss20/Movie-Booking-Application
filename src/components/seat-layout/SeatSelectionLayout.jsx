@@ -18,7 +18,7 @@ const SeatSelectionLayout = (props) => {
       <div className="col-md-8">
         <div className="seatStructure txt-center" style={{ overflowX: "auto" }}>
           <table id="seatsBlock" className="table-borderless">
-            <p id="notification"></p>
+            <tbody>
             <tr>
               <td></td>
               <td>1</td>
@@ -1166,6 +1166,7 @@ const SeatSelectionLayout = (props) => {
                 />
               </td>
             </tr>
+            </tbody>
           </table>
 
           <div className="screen">

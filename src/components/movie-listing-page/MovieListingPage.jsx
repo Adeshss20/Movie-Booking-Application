@@ -3,8 +3,6 @@ import React from "react";
 import { FetchData } from "../../fetch-data/FetchData";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import Movie from "../movie/Movie";
-// import Loading from "../loading/Loading";
 
 const MovieListingPage = () => {
   const [data, setData] = useState({
@@ -38,10 +36,10 @@ const MovieListingPage = () => {
 
   return (
     <div className="container my-4">
-      <nav className="navbar navbar-info bg-info">
+      
         <form className="container-fluid">
           <div className="input-group">
-            <span className="input-group-text font-weight-bold">
+            <span className="input-group-text font-weight-bold btn-info">
               Search Movie
             </span>
             <input
@@ -53,7 +51,6 @@ const MovieListingPage = () => {
             />
           </div>
         </form>
-      </nav>
       <div className="row d-flex justify-content-between mx-2">
         {
         data["movieData"].map((movie) => {

@@ -383,9 +383,7 @@ export const FetchData = (setState) => {
     const FinalTiming = movie.timing.reduce((timingList, time) => {
         timingList.push( `${time.start_time}-${time.end_time}`)
         return timingList;
-    },[])
-    // console.log(FinalTiming);
-    
+    },[])    
     movie.timing = FinalTiming
   })
  
@@ -393,5 +391,4 @@ export const FetchData = (setState) => {
   setState({
     movieData: temp,
   });
-  // console.log(temp);
 };

@@ -83,7 +83,6 @@ const BookingModal = (props) => {
                     onChange={handleChange}
                     required
                   >
-                    <option selected>Open this select</option>
                     {/* {props.timing.map(time => {
                       return <option value={time}>{time}</option>
                     })} */}
@@ -123,7 +122,7 @@ const BookingModal = (props) => {
                     className="btn btn-outline-success my-2 mx-2"
                     disabled={
                       parseInt(formData.noOfSeat,10) <= 0 ||
-                      formData.timing.trim() === "Open this select" ||
+                      formData.timing.trim() === "" ||
                       formData.seat.length===0 ||
                       formData.seat.length!==parseInt(formData.noOfSeat) 
                     }

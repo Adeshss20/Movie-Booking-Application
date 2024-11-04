@@ -10,7 +10,7 @@ const NavBar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/movies">
-                Home
+                Movies
               </Link>
             </li>
             <li className="nav-item">
